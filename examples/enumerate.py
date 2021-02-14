@@ -75,8 +75,11 @@ if __name__ == '__main__':
     while not(done):
 	    	    
 	if len(replicas[0].chain.vec) == replicas[0].chain.n-1:    
+            print "\nnow processing replicas[0].chain.vec: ", replicas[0].chain.vec
 	    if replicas[0].chain.viable:		
+                print "\t-----> chain is viable"
 		if replicas[0].chain.nonsym():
+                    print "\t=====> chain is non-sym"
 		    
 		    # tally the number of contacts
 		    state = replicas[0].chain.contactstate()

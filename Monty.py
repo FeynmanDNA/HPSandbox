@@ -232,16 +232,24 @@ class DistRestraint:
 
     def energy(self,chain):
         """ return the energy of the distance restraint"""
+	print "self.kspring = ", self.kspring
 	return self.kspring*self.D(chain)
 	
     def D(self,chain):
 	"""Return the sum of squared-distances over the selected contacts."""
 	D = 0.0
+        print "len of self.contacts = ", len(self.contacts)
+        print "self.contacts = ", self.contacts
 	for i in range(0,len(self.contacts)):
 	    c = self.contacts[i][0]
 	    d = self.contacts[i][1]
+            print "c, d = ", c, d
+            print "chain.coords = ", chain.coords
+	    print "chain.coords[c][0]-chain.coords[d][0] = ", chain.coords[c][0]-chain.coords[d][0]
+	    print "chain.coords[c][1]-chain.coords[d][1] = ", chain.coords[c][1]-chain.coords[d][1]
 	    D = D + (chain.coords[c][0]-chain.coords[d][0])*(chain.coords[c][0]-chain.coords[d][0])
 	    D = D + (chain.coords[c][1]-chain.coords[d][1])*(chain.coords[c][1]-chain.coords[d][1])
+	    print "D = ", D
 
 	return D
 

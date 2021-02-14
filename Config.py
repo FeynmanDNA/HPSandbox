@@ -23,12 +23,12 @@ class Config:
     # Important constants, energy parms
     self.randseed = 345                     # random seed for random.Random()
     self.k =  0.001987                      # (kcal/K.mol) Boltzmann's constant 
-    self.T = 300.0                          # reference temperataure units Kelvin (K)
+    self.T = 300.0                          # reference temperature units Kelvin (K)
     self.eps = -5.0                         # energetic strength of each contact (in units kT)
     self.epsilon = self.eps*self.k*self.T   # energetic strength of each contact -- in units Joules (J/mol)
                                             # kT = ~8.314 J/mol
 
-    self.RESTRAINED_STATE = [(1,4),(6,9)]   # the contact state to be harmonically restrained
+    self.RESTRAINED_STATE = []   # the contact state to be harmonically restrained
                                             # (in squared-distance d^2 = D)
     self.KSPRING = 0.0*self.k*self.T        # D spring constant (in kcal/mol per D)
 
